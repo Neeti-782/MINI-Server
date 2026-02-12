@@ -7,16 +7,15 @@ async function bootstrap() {
 
   app.useGlobalPipes(
     new ValidationPipe({
-      whitelist : true,
-    })
-  )
+      whitelist: true,
+    }),
+  );
   app.enableCors({
-    origin: ["http://localhost:5173", 
-          'https://mini-mu-liard.vercel.app',],
+    origin: ['http://localhost:5173', 'https://mini-mu-liard.vercel.app'],
 
-    methods: "GET, HEAD, PUT, POST, DELETE, PATCH",
+    methods: 'GET, HEAD, PUT, POST, DELETE, PATCH',
     credentials: true,
-  })
+  });
   await app.listen(process.env.PORT ?? 3000);
 }
 bootstrap();
